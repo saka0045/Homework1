@@ -1,0 +1,22 @@
+./burst -r ref.fna -q query.fna --taxonomy taxonomy.txt -o output.txt
+./burst -r ref.fna -q query.fna --taxonomy taxonomy.txt -o output.txt
+0  --> Assigning taxonomy based on input file taxonomy.txt.
+Using up to AVX-128 with 48 threads.
+Parsed 130727 queries.
+Max query len: 101, avg. divergence: 90.764586 (18.509566 w/o dupes)
+Parsed 5000 references.
+There are 5000 references and hence 312 clumps (+1)
+Average R pack length = 1423.881789
+Searching best paths through 35294 unique queries...
+
+Search Progress: [6.07%]
+Search Progress: [24.92%]
+Search Progress: [39.30%]
+Search Progress: [54.31%]
+Search Progress: [64.54%]
+Search Progress: [79.23%]
+Search Progress: [90.42%]
+Search Progress: [100.00%]
+Search complete. Consolidating results...
+
+Alignment time: 0.767544 seconds
