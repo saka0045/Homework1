@@ -69,6 +69,5 @@ if __name__ == '__main__':
     # Run run_burst
     return_value, stdout, stderr = run_burst(args.query, args.ref, args.taxonomy,
                                              args.output, args.command, args.verbose)
+    # Print out the return value, stdout and stderr
     print(return_value, stdout, stderr)
-
-
