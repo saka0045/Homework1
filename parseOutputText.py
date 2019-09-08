@@ -1,6 +1,11 @@
-# Parses out the output file created by burst
+"""
+This script parses the output file created by burst.
+The script requires the output.txt and query.fna to be in the same directory as this script.
+"""
 
-# Open files
+__author__ = "Yuta Sakai"
+
+# Open files, make sure the following files are in the same directory as this script
 query_file = open("./query.fna", "r")
 output_file = open("./output.txt", "r")
 
@@ -25,11 +30,15 @@ for line in output_file:
         query_above_ninety_seven += 1
     # Extract the species information out of taxonomy
     species = taxonomy.split(";")[6]
-    # Make hash table of different species
-    if species not in species_dict.keys():
-        species_dict[species] = 1
+    # Skip if species information is empty
+    if species == "s__":
+        continue
     else:
-        species_dict[species] += 1
+        # Make hash table of different species
+        if species not in species_dict.keys():
+            species_dict[species] = 1
+        else:
+            species_dict[species] += 1
 
 print("Queries with greater than or equal to 97% match is: " + str(query_above_ninety_seven))
 
@@ -37,8 +46,10 @@ print("Queries with greater than or equal to 97% match is: " + str(query_above_n
 fraction_about_ninety_seven = query_above_ninety_seven / query_count
 print("Fraction of queries with greater than or above 97% match is: " + str(fraction_about_ninety_seven))
 
-# Print out the results of species hash table
+# Print out the results of species hash table and the most common species
 print(species_dict)
+most_common_species = max(species_dict, key=species_dict.get)
+print("The most common bacterial species in the query set is: " + most_common_species[3:])
 
 query_file.close()
 output_file.close()

@@ -1,6 +1,12 @@
 # Template file for CSCI 5481 Fall 2015 Exercise 1
 # Usage:
 # template.py -h
+"""
+Python script to run Burst for Homework1 for CSCI 5481 Fall 2019
+
+Modified by Yuta Sakai
+"""
+
 import sys, os
 import argparse
 from subprocess import Popen, PIPE
