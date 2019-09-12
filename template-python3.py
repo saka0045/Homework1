@@ -14,7 +14,13 @@ from subprocess import Popen, PIPE
 
 # Adjusted the argument parser for my liking
 def make_arg_parser():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(
+        prog='template-python3.py',
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter
+    )
+    parser.add_argument(
+        '--version', action='version', version='%prog 2.0'
+    )
     parser.add_argument(
         "-q", "--query", dest="query",
         default=argparse.SUPPRESS, required=True,
