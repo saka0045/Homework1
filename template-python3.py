@@ -5,6 +5,7 @@
 Python script to run Burst for Homework1 for CSCI 5481 Fall 2019
 
 Modified by Yuta Sakai
+Discussed homework with Jeannette Rustin
 """
 
 import sys, os

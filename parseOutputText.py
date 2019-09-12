@@ -1,6 +1,8 @@
 """
 This script parses the output file created by burst.
 The script requires the output.txt and query.fna to be in the same directory as this script.
+
+Discussed homework with Jeannette Rustin
 """
 
 __author__ = "Yuta Sakai"
