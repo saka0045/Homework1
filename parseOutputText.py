@@ -18,12 +18,17 @@ for line in query_file:
 print("Total queries: " + str(query_count))
 
 # Count how many queries have match greater than or equal to 97% and collect taxonomy info
+total_percent = 0
+line_count = 0
 query_above_ninety_seven = 0
 species_dict = {}
 for line in output_file:
     line = line.rstrip()
     line_item = line.split("\t")
     percent_match = float(line_item[2])
+    # Keep track of the total percent to calculate the average percent similarity
+    total_percent += percent_match
+    line_count += 1
     taxonomy = line_item[12]
     # Count the queries with greater than or equal to 97% match
     if percent_match >= 97:
@@ -49,7 +54,12 @@ print("Fraction of queries with greater than or above 97% match is: " + str(frac
 # Print out the results of species hash table and the most common species
 print(species_dict)
 most_common_species = max(species_dict, key=species_dict.get)
-print("The most common bacterial species in the query set is: " + most_common_species[3:])
+print("The most common bacterial species in the query set is: " + most_common_species[3:] \
+      + " at " + str(species_dict[most_common_species]) + " hits")
+
+# Calculate the average percent similarity
+average_percent_similarity = total_percent / line_count
+print("Average percent similarity is: " + str(average_percent_similarity))
 
 query_file.close()
 output_file.close()
