@@ -17,7 +17,7 @@ for line in query_file:
 
 print("Total queries: " + str(query_count))
 
-# Count how many queries have match greater than or equal to 97% and collect taxonomy info
+# Parse out the output.txt file
 total_percent = 0
 line_count = 0
 query_above_ninety_seven = 0
