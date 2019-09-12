@@ -1,0 +1,5 @@
+a) Fraction of the original input query sequences with 97% or greater match is 0.348.
+
+b) The most common bacterial species in the query set is Faecalibacterium_prausnitzii at 9154 hits.
+
+c) Average percent similarity of the matches is 98.46%.
